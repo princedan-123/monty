@@ -1,4 +1,5 @@
 #include "monty.h"
+
 int data = 0;
 int main(int argc, char *argv[])
 {
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
 	}
 	while ((fgets(buffer, sizeof(buffer), ptr) != NULL))
 	{
-		buffer[strcspn(buffer, "\n")] = '\0';
+		buffer[strcspn(buffer, "/n")] = '\0';
 		opcode = strtok(buffer, " ");
 		argument = strtok(NULL, " ");
 		line_number++;
@@ -30,7 +31,6 @@ int main(int argc, char *argv[])
 
 		if (argument != NULL)
 			data = atoi(argument);
-
 		optable(opcode, line_number, &stack);
 	}
 	fclose(ptr);

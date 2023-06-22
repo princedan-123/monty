@@ -40,7 +40,7 @@ void pall(stack_t **stack, unsigned int line_number)
 		exit(0);
 	while (tmp != NULL)
 	{
-		fprintf(stdout, "%i\n", tmp->n);
+		fprintf(stdout, "%i", tmp->n);
 			tmp = tmp->next;
 	}
 }
