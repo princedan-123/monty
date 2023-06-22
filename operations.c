@@ -8,7 +8,7 @@
  */
 
 void push(stack_t **stack, unsigned int line_number)
-{	
+{
 	stack_t *new = malloc(sizeof(stack_t));
 
 	(void)line_number;
@@ -81,11 +81,10 @@ void add(stack_t **stack, unsigned int line_number)
 	stack_t *current = *stack;
 	stack_t *tmp = *stack;
 	int sum = 0;
-	(void)line_number;
 
 	if ((current == NULL) || (current->next == NULL))
 	{
-		fprintf(stderr, "L<line_number>: can't add, stack too short\n");
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	while (tmp != NULL)
