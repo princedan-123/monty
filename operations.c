@@ -75,11 +75,10 @@ void pall(stack_t **stack, unsigned int line_number)
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp = *stack;
-	(void)line_number;
 
 	if (tmp == NULL)
 	{
-		fprintf(stderr, "L<line_number>: can't pop an empty stack\n");
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (tmp->next != NULL)
