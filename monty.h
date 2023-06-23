@@ -46,4 +46,5 @@ void optable(char *op, unsigned int line_number, stack_t **stack);
 void pint(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void _free(stack_t **stack);
 #endif

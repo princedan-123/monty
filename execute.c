@@ -19,8 +19,16 @@ void optable(char *op, unsigned int line_number, stack_t **stack)
 		if (strcmp(op, table[i].opcode) == 0)
 		{
 			table[i].f(stack, line_number);
+			break;
 		}
 		i++;
+	}
+	if (i == size)
+	{
+		printf("%s\n", op);
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
+		_free(stack);
+		exit(EXIT_FAILURE);
 	}
 
 }

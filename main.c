@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
 		optable(opcode, line_number, &stack);
 		line_number++;
 	}
+	_free(&stack);
 	fclose(ptr);
 	return (0);
 
