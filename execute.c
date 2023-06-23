@@ -1,8 +1,7 @@
 #include "monty.h"
 
 /**
- * table - an array of struct containing op string and corresponding operation
- * @op: op string that determines the operation
+ * optable - array of struct containing op string and corresponding operation
  * Return: nothing is returned
  */
 
@@ -11,8 +10,13 @@ void optable(char *op, unsigned int line_number, stack_t **stack)
 {
 	int i = 0;
 	instruction_t table[size] = {
-		{"push", push}, {"pall", pall}, {"pop", pop},
-	       	{"add", add}, {"pint", pint}, {"swap", swap},{"nop", nop}};
+			{"push", push},
+			{"pall", pall},
+			{"pop", pop},
+			{"add", add},
+			{"pint", pint},
+			{"swap", swap},
+			{"nop", nop}};
 
 	while (i < size)
 	{

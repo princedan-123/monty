@@ -1,6 +1,7 @@
 #ifndef ALX
 #define ALX
-extern char* data;
+extern char *data;
+
 /*linked list*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -13,9 +14,9 @@ extern char* data;
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /*struct for opcode*/
 /**
@@ -28,8 +29,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 /*standard libraries*/
 #include <stdio.h>
