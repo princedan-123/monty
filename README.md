@@ -17,7 +17,7 @@ The pall opcode
 
 The opcode pall prints all the values on the stack, starting from the top of the stack.
 
-  
+
 1. pint
 mandatory
 Implement the pint opcode.
