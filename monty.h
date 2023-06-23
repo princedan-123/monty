@@ -1,6 +1,6 @@
 #ifndef ALX
 #define ALX
-extern int data;
+extern char* data;
 /*linked list*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

@@ -1,5 +1,12 @@
 #include "monty.h"
-int data = 0;
+char *data = NULL;
+/**
+ * main - entry point
+ * @argc: count of command line
+ * @argv: array of command line arguments
+ * Return: zero
+ */
+
 int main(int argc, char *argv[])
 {
 	char *opcode = NULL, *argument = NULL;
@@ -24,14 +31,11 @@ int main(int argc, char *argv[])
 		buffer[strcspn(buffer, "\n")] = '\0';
 		opcode = strtok(buffer, " ");
 		argument = strtok(NULL, " ");
-		line_number++;
 		if (opcode == NULL || opcode[0] == '\n')
 			continue;
-
-		if (argument != NULL)
-			data = atoi(argument);
-
+		data = argument;
 		optable(opcode, line_number, &stack);
+		line_number++;
 	}
 	fclose(ptr);
 	return (0);
