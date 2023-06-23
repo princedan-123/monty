@@ -17,5 +17,4 @@ void _free(stack_t **stack)
 		tmp = tmp->next;
 		free(current);
 	}
-	free(tmp);
 }
