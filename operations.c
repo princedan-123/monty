@@ -119,3 +119,30 @@ void add(stack_t **stack, unsigned int line_number)
 	free(current);
 	*stack = tmp;
 }
+/**
+ * multiply - multiply the first two top nodes
+ * @stack: a pointer to pointer that points to the top of the stack
+ * @line_number: the line number of the monty byte code
+ * Return: nothing is returned
+ */
+
+void multiply(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current = *stack;
+	stack_t *tmp = *stack;
+	int mul = 0;
+
+	if ((current == NULL) || (current->next == NULL))
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+		_free(stack);
+		exit(EXIT_FAILURE);
+	}
+	mul = tmp->n;
+	mul *= tmp->next->n;
+	tmp->next->n = mul;
+	tmp = tmp->next;
+	tmp->prev = NULL;
+	free(current);
+	*stack = tmp;
+}
