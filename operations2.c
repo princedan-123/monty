@@ -56,3 +56,29 @@ void nop(stack_t **stack, unsigned int line_number)
 	(void) stack;
 	(void) line_number;
 }
+
+/**
+ * sub - subtracts the two top stack
+ * @stack: the pointer to the top of the stack
+ * @line_number: the line number of the monty bytecode
+ */
+void sub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current = *stack;
+	stack_t *tmp = *stack;
+	int minus = 0;
+
+	if ((current == NULL) || (current->next == NULL))
+	{
+		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		_free(stack);
+		exit(EXIT_FAILURE);
+	}
+	minus = tmp->next->n;
+	minus -= tmp->n;
+	tmp->next->n = minus;
+	tmp = tmp->next;
+	tmp->prev = NULL;
+	free(current);
+	*stack = tmp;
+}

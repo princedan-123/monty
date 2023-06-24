@@ -5,7 +5,7 @@
  * Return: nothing is returned
  */
 
-#define size 7
+#define size 8
 void optable(char *op, unsigned int line_number, stack_t **stack)
 {
 	int i = 0;
@@ -16,7 +16,8 @@ void optable(char *op, unsigned int line_number, stack_t **stack)
 			{"add", add},
 			{"pint", pint},
 			{"swap", swap},
-			{"nop", nop}};
+			{"nop", nop},
+			{"sub", sub}};
 
 	while (i < size)
 	{
