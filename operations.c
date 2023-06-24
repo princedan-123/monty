@@ -107,15 +107,14 @@ void add(stack_t **stack, unsigned int line_number)
 	if ((current == NULL) || (current->next == NULL))
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		_free(stack);
 		exit(EXIT_FAILURE);
 	}
-	while (tmp != NULL)
-	{
-		sum = tmp->n;
-		tmp = tmp->next;
-		break;
-	}
-	tmp->n += sum;
+	sum += tmp->n;
+	sum += tmp->next->n;
+	tmp->next->n = sum;
+	tmp = tmp->next;
 	tmp->prev = NULL;
 	free(current);
+	*stack = tmp;
 }
