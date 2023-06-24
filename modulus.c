@@ -24,8 +24,8 @@ void modulus(stack_t **stack, unsigned int line_number)
 		_free(stack);
 		exit(EXIT_FAILURE);
 	}
-	mod = tmp->n;
-	mod = tmp->next->n % mod;
+	mod = tmp->next->n;
+	mod = mod % tmp->n;
 	tmp->next->n = mod;
 	tmp = tmp->next;
 	tmp->prev = NULL;
