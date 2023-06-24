@@ -21,6 +21,8 @@ void modulus(stack_t **stack, unsigned int line_number)
 	if (tmp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_number);
+		_free(stack);
+		exit(EXIT_FAILURE);
 	}
 	mod = tmp->n;
 	mod = tmp->next->n % mod;
