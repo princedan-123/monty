@@ -6,13 +6,14 @@
  * Return: nothing is returned
  */
 
-#define size 7
+#define size 8
 void optable(char *op, unsigned int line_number, stack_t **stack)
 {
 	int i = 0;
 	instruction_t table[size] = {
 		{"push", push}, {"pall", pall}, {"pop", pop},
-	       	{"add", add}, {"pint", pint}, {"swap", swap},{"nop", nop}};
+	       	{"add", add}, {"pint", pint}, {"swap", swap},
+		{"nop", nop}, {"sub", sub}};
 
 	while (i < size)
 	{
