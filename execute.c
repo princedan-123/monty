@@ -31,7 +31,7 @@ void optable(char *op, unsigned int line_number, stack_t **stack)
 		}
 		i++;
 	}
-	if (i == size)
+	if (i == size || size != i)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op);
 		_free(stack);
