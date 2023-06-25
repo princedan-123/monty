@@ -10,7 +10,7 @@
 
 void pint(stack_t **stack, unsigned int line_number)
 {
-	if (stack == NULL)
+	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%i: can't pint, stack empty", line_number);
 		_free(stack);
@@ -32,7 +32,7 @@ void swap(stack_t **stack, unsigned int line_number)
 {
 	int temp = (*stack)->n;
 
-	if (stack == NULL || (*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%i: can't swap, stack too short", line_number);
 		_free(stack);
