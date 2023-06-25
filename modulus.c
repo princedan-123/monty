@@ -32,3 +32,32 @@ void modulus(stack_t **stack, unsigned int line_number)
 	free(current);
 	*stack = tmp;
 }
+
+/**
+ * pchar -  prints the char at the top of the stack, followed by a new line
+ * @stack: double pointer to top of stack
+ * @line_number: line number where function is called
+ *
+ * Return: void
+ */
+
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	int val = (*stack)->n;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		_free(stack);
+		exit(EXIT_FAILURE);
+	}
+
+	if (val < 0 || val > 127)
+	{
+		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
+		_free(stack);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%c\n", val);
+}
