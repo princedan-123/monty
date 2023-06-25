@@ -84,7 +84,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	*stack = tmp;
 }
 /**
- * div - adds the first two top nodes
+ * divide - adds the first two top nodes
  * @stack: a pointer to pointer that points to the top of the stack
  * @line_number: the line number of the monty byte code
  * Return: nothing is returned
