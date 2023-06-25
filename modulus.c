@@ -61,3 +61,27 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	printf("%c\n", val);
 }
+
+/**
+ * pstr -  prints the string starting at the top, followed by new line
+ * @stack: double pointer to the top of the stack
+ * @line_number: line number where function is called
+ *
+ * Return: void
+ */
+
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *val= *stack;
+	(void)line_number;
+
+
+	while (val != NULL && val->n != 0 && (val->n >= 0 && val->n <= 127))
+	{
+		putchar(val->n);
+		val = val->next;
+	}
+	putchar('\n');
+
+}
+
