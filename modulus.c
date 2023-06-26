@@ -72,9 +72,8 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 void pstr(stack_t **stack, unsigned int line_number)
 {
-	stack_t *val= *stack;
+	stack_t *val = *stack;
 	(void)line_number;
-
 
 	while (val != NULL && val->n != 0 && (val->n >= 0 && val->n <= 127))
 	{
@@ -86,7 +85,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * rot1 - rotates the stack to the top
+ * rotl - rotates the stack to the top
  * @stack: double pointer to the top of the stack
  * @line_number: line number
  *
@@ -108,4 +107,28 @@ void rotl(stack_t **stack, unsigned int line_number)
 	*stack = (*stack)->next;
 	val->next->prev = NULL;
 	val->next->next = NULL;
+}
+/**
+ * rotr -  rotates the stack to the bottom
+ * @stack: double pointer to top of stack
+ * @line_number: line number where function is called
+ *
+ * Return: always void
+ */
+
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *val = *stack;
+	(void)line_number;
+
+	if (val == NULL || val->next == NULL)
+		return;
+
+	if (val->next != NULL)
+		val = val->next;
+
+	*stack = val->next;
+	val->prev->next = NULL;
+	val->prev = NULL;
+	val = *stack;
 }
